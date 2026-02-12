@@ -1,0 +1,68 @@
+$padding_gap_size: 20px;
+$yellow: #d7fa00;
+@mixin flex($font: null, $gap: 0, $align: strech, $justify: start) {
+  display: flex;
+  font-size: $font;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+
+.header-container {
+  @include flex($align: center);
+  justify-content: space-between;;
+  padding: 10px $padding_gap_size;
+  background-color: black;
+
+  ul {
+    @include flex($justify: conter, $align: center);
+    gap: $padding_gap_size;
+
+    li {
+      @include flex($font: 13px);
+      list-style: none;
+      font-weight: 400;
+    }
+
+  }
+
+}
+
+section {
+  @include flex;
+  flex-wrap: wrap;
+  gap: $padding_gap_size;
+  padding: $padding_gap_size 40px;
+}
+
+  .content-container {
+    @include flex($align: flex-start, $gap: 5px);
+    flex-direction: column;
+
+    img {
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+  }
+
+  span {
+    @include flex($font: 12px);
+    color: $yellow;
+    border: 1px solid $yellow;
+    padding: 4px 5px;
+    border-radius: 3px;
+  }
+
+  div {
+    @include flex($font:18px);
+    font-weight: 600;
+  }
+
+  p {
+    @include flex($font:12px);
+    color: rgb(160, 160, 160);
+  }
+}
+
+
